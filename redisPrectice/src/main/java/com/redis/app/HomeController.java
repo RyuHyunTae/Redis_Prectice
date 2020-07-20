@@ -1,21 +1,15 @@
 package com.redis.app;
 
-import java.text.DateFormat; 
-import java.util.Date;
 import java.util.Locale;
-
-import javax.annotation.Generated;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.redis.service.RedisService;
 import com.redis.service.SpringRedisExample;
 
 /**
@@ -33,7 +27,7 @@ public class HomeController {
 	@GetMapping(value = "/")
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		SpringRedisExample ex = new SpringRedisExample();
+//		SpringRedisExample ex = new SpringRedisExample();
 		
 //		ex.exam1();
 //		ex.string("key", "nameB", "ageC");
@@ -41,7 +35,10 @@ public class HomeController {
 //		ex.set();
 //		ex.zset();
 		
-		ex.delete();
+//		ex.delete();
+		
+		RedisService ex2 = new RedisService();
+		ex2.getList();
 		return "home";
 	}
 	

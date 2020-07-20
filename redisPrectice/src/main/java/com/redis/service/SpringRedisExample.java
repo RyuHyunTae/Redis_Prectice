@@ -107,15 +107,13 @@ public class SpringRedisExample {
 		ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRedisConfig.class);
 		try {
 			@SuppressWarnings("unchecked")
-			RedisTemplate<String, Integer> redisTemplate = (RedisTemplate<String, Integer>)ctx.getBean("redisTemplate");
+			RedisTemplate<String, String> redisTemplate = (RedisTemplate<String, String>)ctx.getBean("redisTemplate");
 			
-			ListOperations<String, Integer> lists = redisTemplate.opsForList();
+			ListOperations<String, String> lists = redisTemplate.opsForList();
 			
-			lists.rightPush("test",1);
-			lists.rightPush("test",2);
-			
-			
-			
+			lists.rightPush("test","1");
+			lists.rightPush("test","2");
+
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -183,4 +181,7 @@ public class SpringRedisExample {
 			ctx.close();
 		}
 	}
+	
+
+	
 }
