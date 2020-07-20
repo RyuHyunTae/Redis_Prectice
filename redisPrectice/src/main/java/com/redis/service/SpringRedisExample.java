@@ -154,7 +154,7 @@ public class SpringRedisExample {
 			
 			ZSetOperations<String, Integer> zsets = redisTemplate.opsForZSet();
 			
-			zsets.add("ztest",1,1);
+			zsets.add("ztest",1,1);   // (key,value,score)
 			zsets.add("ztest",2,2);
 			
 		}
@@ -166,7 +166,21 @@ public class SpringRedisExample {
 		}
 	}
 	
-	public void redisTest() {
-		
+	public void delete() {
+		ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRedisConfig.class);
+		try {
+			@SuppressWarnings("unchecked")
+			RedisTemplate<String, Integer> redisTemplate = (RedisTemplate<String, Integer>)ctx.getBean("redisTemplate");
+			
+			String key = "test";
+			
+			redisTemplate.delete(key);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			ctx.close();
+		}
 	}
 }

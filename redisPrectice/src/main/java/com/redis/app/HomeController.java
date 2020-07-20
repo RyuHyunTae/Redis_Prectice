@@ -41,6 +41,7 @@ public class HomeController {
 //		ex.set();
 //		ex.zset();
 		
+		ex.delete();
 		return "home";
 	}
 	
