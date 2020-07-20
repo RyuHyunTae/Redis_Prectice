@@ -8,7 +8,7 @@ NoSQL이란 비관계형 데이터베이스 KEY-VALUE나 컬럼, 문서형싱의
 
 레디스는 크게 <String,Set,Sorted Set,Hash,List>의 데이터 형식을 지원
 
-레디스 장점
+##레디스 장점
 1. 리스트,배열과 같은 데이터를 처리하는데 유용하다.
 	VALUE 값으로 문자열, 리스트, Set, Sorted set, Hash 등 여러 데이터 형식을 지원하기에 다양한 방식으로 데이터를 활용 가능
 
@@ -22,7 +22,7 @@ NoSQL이란 비관계형 데이터베이스 KEY-VALUE나 컬럼, 문서형싱의
 	Master-Slave 형식으로 구성이 가능함, 데이터 분실 위험을 없애줌
 
 
-CRUD 명령어
+##CRUD 명령어
 
 keys : 현재의 키값 들을 확인하는 명령어
 ex) 127.0.0.1 : 6379> keys *
@@ -56,12 +56,13 @@ ex 127.0.0.1 : 63796> lrange list 0 1
 
 
 
-기타 명령어
+##기타 명령어
+
 flushall : 현재 저장되어 있는 모든 key를 삭제
 
 
 
-Data 삽입
+##Data 삽입
 
 List는 Push를 통하여 데이터를 저장
 Hash는 Map 자료형과 사용이 거의 비슷, key-field-value를 작성하여 데이터를 삽입
@@ -69,7 +70,7 @@ Set은 같은 Key에 여러 value를 작성 할 수 있음
 ZSet은 value에 Score를 포함하여 데이터를 삽입
 
 
-Data 조회
+##Data 조회
 
 List는 pop을 통하여 조회(Queue처럼 사용시 편함)
 Hash는 entries를 통해 데이터를 Map자료형을 가져옴
