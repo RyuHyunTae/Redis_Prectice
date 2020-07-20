@@ -64,16 +64,16 @@ flushall : 현재 저장되어 있는 모든 key를 삭제
 
 ## Data 삽입
 
-List는 Push를 통하여 데이터를 저장
-Hash는 Map 자료형과 사용이 거의 비슷, key-field-value를 작성하여 데이터를 삽입
-Set은 같은 Key에 여러 value를 작성 할 수 있음
-ZSet은 value에 Score를 포함하여 데이터를 삽입
+- List는 Push를 통하여 데이터를 저장
+- Hash는 Map 자료형과 사용이 거의 비슷, key-field-value를 작성하여 데이터를 삽입
+- Set은 같은 Key에 여러 value를 작성 할 수 있음
+- ZSet은 value에 Score를 포함하여 데이터를 삽입
 
 
 ## Data 조회
 
-List는 pop을 통하여 조회(Queue처럼 사용시 편함)
-Hash는 entries를 통해 데이터를 Map자료형을 가져옴
-Set의 value 안의 값들은 member라고 정의, members를 통해 해당 Key의 값들을 set자료형으로 가져올 수 있음
-ZSet은 range를 통해 정해진 Rank범위의 데이터를 가져올수 있음. (Score를 기준으로 오름차순으로 데이터를 정렬)
+- List는 pop을 통하여 조회(Queue처럼 사용시 편함)
+- Hash는 entries를 통해 데이터를 Map자료형을 가져옴
+- Set의 value 안의 값들은 member라고 정의, members를 통해 해당 Key의 값들을 set자료형으로 가져올 수 있음
+- ZSet은 range를 통해 정해진 Rank범위의 데이터를 가져올수 있음. (Score를 기준으로 오름차순으로 데이터를 정렬)
 
