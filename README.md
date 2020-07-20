@@ -24,32 +24,32 @@ NoSQL이란 비관계형 데이터베이스 KEY-VALUE나 컬럼, 문서형싱의
 
 ## CRUD 명령어
 
-keys : 현재의 키값 들을 확인하는 명령어
+- keys : 현재의 키값 들을 확인하는 명령어
 ex) 127.0.0.1 : 6379> keys *
 
-set : 키/값을 저장하는 명령어
+- set : 키/값을 저장하는 명령어
 ex) 127.0.0.1 : 6379> set key value
      127.0.0.1 : 6379> keys *
      1) "key"	
 
-mset : 여러개의 Key와 value를 한번에 입력
+- mset : 여러개의 Key와 value를 한번에 입력
 
-setex : Key와 value, expires(sec) 설정을 입력
+- setex : Key와 value, expires(sec) 설정을 입력
 (입력된 시간 이후에 소멸된다)
 
-get : 키에 해당하는 값을 가져오는 명령어
+- get : 키에 해당하는 값을 가져오는 명령어
 ex) 127.0.0.1 : 6379> get key
      "value"
 
-mget : 여러개의 Key값을 입력하는 Value를 동시에 리턴받는다.
+- mget : 여러개의 Key값을 입력하는 Value를 동시에 리턴받는다.
 
-del : 키와 해당하는 값을 삭제하는 명령어. 여러개의 키값을 지우는 dels는 없다.
-ex) 127.0.0.1 : 6379> del key
+- del : 키와 해당하는 값을 삭제하는 명령어. 여러개의 키값을 지우는 dels는 없다.
+ex) <code>127.0.0.1 : 6379> del key
      (integer)1
      127.0.0.1 : 6379> keys *
-     (empty list or set)
+     (empty list or set)</code>
 
-lrange key start stop : list형태의 저장된 value값을 확인
+- lrange key start stop : list형태의 저장된 value값을 확인
 ex 127.0.0.1 : 63796> lrange list 0 1
     1) "2"
     2) "1"
@@ -58,7 +58,7 @@ ex 127.0.0.1 : 63796> lrange list 0 1
 
 ## 기타 명령어
 
-flushall : 현재 저장되어 있는 모든 key를 삭제
+- flushall : 현재 저장되어 있는 모든 key를 삭제
 
 
 
